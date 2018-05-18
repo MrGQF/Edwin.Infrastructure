@@ -53,6 +53,8 @@ namespace Edwin.Infrastructure.EntityFramework
             service.AddScoped(typeof(IEntityRepository<,>), proxyType);
             service.AddScoped(typeof(IRepository<>), proxyType);
             service.AddScoped(typeof(IApplicationService<,>), typeof(ApplicationServiceBase<,>));
+            service.AddScoped(typeof(IQueries<,>), typeof(ApplicationServiceBase<,>));
+            service.AddScoped(typeof(ICommand<,>), typeof(ApplicationServiceBase<,>));
 
             service.AddScoped<IUnitOfWorkManager, EntityFrameworkUnitOfWorkManager<TContext>>();
             return service;
@@ -67,6 +69,8 @@ namespace Edwin.Infrastructure.EntityFramework
             service.AddScoped(typeof(IEntityRepository<,>), proxyType);
             service.AddScoped(typeof(IRepository<>), proxyType);
             service.AddScoped(typeof(IApplicationService<,>), typeof(ApplicationServiceBase<,>));
+            service.AddScoped(typeof(IQueries<,>), typeof(ApplicationServiceBase<,>));
+            service.AddScoped(typeof(ICommand<,>), typeof(ApplicationServiceBase<,>));
 
             service.AddScoped<IUnitOfWorkManager, EntityFrameworkUnitOfWorkManager<TContext>>();
 
